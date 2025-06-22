@@ -37,6 +37,7 @@ export class Login {
     // console.log("valido: ", this.loginForm.valid)
     // console.log("invalido: ", this.loginForm.invalid)
     if (this.loginForm.invalid && (!this.loginForm.value.email || !this.loginForm.value.password)) {
+      this.loginForm.markAllAsTouched(); // fuerza que se muestren los errores en pantalla
       return alert("Error!, por favor completa los datos")
     }
     if (this.loginForm.valid) {

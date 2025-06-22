@@ -28,16 +28,21 @@
       formControlName="password"
       required
     />
-    @if (password.errors?.['required'] && (password.touched || password.dirty)) {
+    @if (password.errors?.['required'] && (password.touched || password.dirty))
+    {
     <span style="color: red">El password es obligatorio.</span>
-    } @if (password.errors?.['minlength'] && (password.touched || password.dirty)) {
+    } @if (password.errors?.['minlength'] && (password.touched ||
+    password.dirty)) {
     <span style="color: red">Minimo de caracteres es de 6</span>
     }
   </div>
 
-  <button type="submit" class="login-button" [disabled]="loading" >Entrar</button>
+  <button type="submit" class="login-button" [disabled]="loading">
+    {{ loading ? 'Cargando...' : 'Entrar' }}
+  </button>
 
-  <p class="signup-link" [routerLink]="['/register']" >
-    ¿No tienes una cuenta? <a style="cursor: pointer;">Regístrate aquí</a>
+  <p class="signup-link">
+    ¿No tienes una cuenta?
+    <a [routerLink]="['/register']" style="cursor: pointer">Regístrate aquí</a>
   </p>
 </form>
