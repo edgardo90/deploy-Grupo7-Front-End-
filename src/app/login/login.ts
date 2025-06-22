@@ -65,7 +65,7 @@ export class Login {
           this.loading = false;
           alert("Ingreso exitoso!");
           setTimeout(() => {
-            this.router.navigate(['/']); // Navigate to the 'login' route
+            this.router.navigate(['/']);// esto envia al inicio de la pagina , despues lo cambian para que lo envie al home del user para que vea sus libros , etc..
           }, 400)
         },
       }))
