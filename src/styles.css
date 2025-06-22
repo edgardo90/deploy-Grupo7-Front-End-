@@ -1,21 +1,20 @@
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; 
-  font-family: sans-serif; 
- 
-   scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* IE y Edge antiguos */
+  overflow-x: hidden;
+  font-family: sans-serif;
+  /* Firefox */
+  /* scrollbar-width: none;  */
+  -ms-overflow-style: none; /* IE y Edge antiguos */
 }
 
 body::-webkit-scrollbar {
   display: none; /* Chrome, Safari y Edge moderno */
 }
-

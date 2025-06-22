@@ -1,0 +1,105 @@
+/* Estilos del formulario de login */
+.login-form {
+  display: flex; /* Hacemos el formulario un contenedor flex */
+  flex-direction: column; /* Apilamos los elementos internos verticalmente */
+  justify-content: center; /* Centra verticalmente el contenido del formulario */
+  align-items: center; /* Centra horizontalmente el contenido del formulario */
+
+  min-height: 80vh; /* Ocupa el alto completo de la ventana para centrarse */
+  background-color: #c1cfe5; /* El fondo ahora va en el formulario */
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center; /* Esto sigue centrando el texto dentro del form */
+
+  /* Agregamos margen automático a los lados para centrar el bloque del formulario */
+  margin-left: auto;
+  margin-right: auto;
+  /* El margin-top y margin-bottom pueden ser 0 si min-height 100vh se encarga del centrado vertical */
+  margin-top: 7%;
+  margin-bottom: 5%;
+}
+
+.login-form h2 {
+  margin-bottom: 50px;
+  color: #333333;
+  font-size: 28px;
+  /* Asegura que el h2 también esté alineado por el flexbox del form */
+  width: 100%;
+}
+
+/* Grupo de entrada (label + input) */
+.input-group {
+  margin-bottom: 20px;
+  width: 100%; /* Importante para que ocupen el ancho completo dentro del formulario */
+  max-width: 320px; /* Opcional: para limitar el ancho de los campos si el formulario es muy ancho */
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555555;
+  font-weight: bold;
+}
+
+.input-group input[type="email"],
+.input-group input[type="password"] {
+  width: 100%; /* Ahora ocupan el 100% del input-group */
+  padding: 12px 10px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.input-group input[type="email"]:focus,
+.input-group input[type="password"]:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+/* Estilos del botón de submit */
+.login-button {
+  background-color: #3b90ec;
+  color: rgb(54, 53, 53);
+  padding: 14px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  width: 100%; /* El botón ahora ocupa el 100% del formulario, ajusta si quieres max-width */
+  max-width: 320px; /* Opcional: limita el ancho del botón */
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+.login-button:active {
+  scale: 90%;
+}
+
+/* Enlace de registro */
+.signup-link {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #666666;
+  width: 100%; /* Asegura que ocupe el ancho completo para el centrado */
+}
+
+.signup-link a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
