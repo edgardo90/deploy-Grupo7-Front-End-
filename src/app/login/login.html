@@ -33,7 +33,7 @@
     }
   </div>
 
-  <button type="submit" class="login-button">Entrar</button>
+  <button type="submit" class="login-button" [disabled]="loading" >Entrar</button>
 
   <p class="signup-link" [routerLink]="['/register']" >
     ¿No tienes una cuenta? <a style="cursor: pointer;">Regístrate aquí</a>

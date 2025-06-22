@@ -1,21 +1,27 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
+import { LoginService } from '../services/login'
+
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule , RouterLink],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './login.html',
   styleUrl: './login.css'
 })
 export class Login {
 
+  loading: boolean = false;
   // Define tu FormGroup
-  // Este FormGroup representa todo tu formulario de login
+  // Este FormGroup representa todo el formulario de login
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(6)]) // Contraseña de al menos 6 caracteres
   });
+
+
+  constructor(private loginService: LoginService, private router: Router) { }
 
   // Getters para acceder fácilmente a los controles en la plantilla HTML
   get email() {
@@ -23,36 +29,47 @@ export class Login {
   }
 
   get password() {
-    return this.loginForm.get('password') as FormControl 
+    return this.loginForm.get('password') as FormControl
   }
 
-  // 3. Método para manejar el envío del formulario
   onSubmit(): void {
-    // console.log({
-    //   email: this.loginForm.value.email,
-    //   password: this.loginForm.value.password
-    // })
-    console.log(this.password.errors)
-    console.log("valido: ", this.loginForm.valid)
-    console.log("invalido: ", this.loginForm.invalid)
+    // console.log(this.password.errors)
+    // console.log("valido: ", this.loginForm.valid)
+    // console.log("invalido: ", this.loginForm.invalid)
     if (this.loginForm.invalid && (!this.loginForm.value.email || !this.loginForm.value.password)) {
       return alert("Error!, por favor completa los datos")
     }
     if (this.loginForm.valid) {
-      return alert("Ingreso exitoso!");
+      this.loading = true
+      const jsonData = {
+        email: this.loginForm.value.email as string,
+        password: this.loginForm.value.password as string
+      }
+      this.loginService.postLogin(jsonData.email, jsonData.password).subscribe(({
+        next: (response) => {
+          console.log(response);
+          if (response.data) {
+            const user = response.data
+            this.loginService.saveUserEmail(user);
+            this.loginService.saveUserName(user);
+            this.loginService.saveUserId(user)
+          }
+        },
+        error: (err: any) => {
+          console.log(err);
+          this.loading = false;
+          return alert(err.error.message)
+        },
+        complete: () => {
+          console.log("se completo con exito");
+          this.loading = false;
+          alert("Ingreso exitoso!");
+          setTimeout(() => {
+            this.router.navigate(['/']); // Navigate to the 'login' route
+          }, 400)
+        },
+      }))
     }
-    // if (this.loginForm.valid) {
-    //   console.log('Formulario de Login Válido. Valores:', this.loginForm.value);
-    //   console.log('Simulando login exitoso...');
-    //   setTimeout(() => {
-    //     // this.router.navigate(['/']); // Redirigir a la ruta raíz después de 2 segundos
-    //   }, 2000);
-    // } else {
-    //   // Si el formulario no es válido, puedes mostrar un mensaje o
-    //   // marcar todos los campos como 'tocados' para que los mensajes de error aparezcan
-    //   console.log('Formulario de Login Inválido.');
-    //   this.loginForm.markAllAsTouched();
-    // }
   }
 
 }
