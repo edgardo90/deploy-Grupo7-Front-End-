@@ -1,0 +1,29 @@
+<form class="register-form">
+  <h2>Crear Cuenta</h2>
+
+  <div class="input-group">
+    <label for="fullName">Nombre y Apellido</label>
+    <input type="text" id="fullName" name="fullName" placeholder="Tu Nombre y Apellido" required>
+  </div>
+
+  <div class="input-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="tu@ejemplo.com" required>
+  </div>
+
+  <div class="input-group">
+    <label for="password">Contraseña</label>
+    <input type="password" id="password" name="password" placeholder="********" required>
+  </div>
+
+  <div class="input-group">
+    <label for="confirmPassword">Confirmar Contraseña</label>
+    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="********" required>
+  </div>
+
+  <button type="submit" class="register-button">Registrarme</button>
+
+  <p class="login-link" [routerLink]="['/login']">
+    ¿Ya tienes una cuenta? <a style="cursor: pointer;">Inicia Sesión aquí</a>
+  </p>
+</form>
