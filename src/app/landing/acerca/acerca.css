@@ -4,22 +4,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position:relative;
   text-align: center;
-  
+  position: relative;
+  padding: 2rem;
 }
-
-.acerca h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.acerca p {
-  font-size: 1.1rem;
- 
-  margin: 0 auto;
-}
-
 
 .acerca::before {
   content: "";
@@ -29,14 +17,11 @@
   right: 0;
   bottom: 0;
   width: 100vw;
-
   background: linear-gradient(
-      rgba(192, 120, 240, 0.6)
+      rgba(14, 98, 189, 0.6)
     ),
     url("/assets/images/cover.jpg") no-repeat center/cover;
-    z-index: 1;
-
-
+  z-index: 1;
 }
 
 .acerca > * {
@@ -44,8 +29,37 @@
   z-index: 2;
 }
 
+.acerca .content {
+  max-width: 800px;
+  color: white;
+  padding: 1rem;
+  animation: fadeIn 1s ease-out;
+}
 
+.acerca h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
 
+.acerca p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
 
-
-
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.acerca .content {
+  background-color: rgba(0, 0, 0, 0.5); /* Sombreado oscuro */
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
