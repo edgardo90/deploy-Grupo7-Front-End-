@@ -1,0 +1,28 @@
+<div class="diseño-usuario">
+  <!-- <app-barra-lateral (cambiarVista)="mostrarVista($event)"></app-barra-lateral> -->
+  <app-barra-lateral class="barra-lateral"></app-barra-lateral>
+  
+  <main class="contenido-principal">
+
+    <ng-container *ngIf="vistaActual === 'libros'">
+      <div *ngIf="libros.length === 0" class="mensaje-vacio">
+        <p>📚 Aún no tenés libros agregados. ¡Comenzá agregando uno!</p>
+      </div>
+      <div *ngIf="libros.length > 0">
+    <!-- Acá luego mostraremos los libros -->
+      <p>Libros cargados del usuario...</p>
+      </div>
+    </ng-container>
+
+    <button class="boton-agregar-libro" (click)="irAAgregarLibro()">Agregar libro</button>
+
+    <ng-container *ngIf="vistaActual === 'colecciones'">
+      <p>Acá se mostrarán las colecciones del usuario</p>
+    </ng-container>
+
+    <ng-container *ngIf="vistaActual === 'configuracion'">
+      <p>Configuración del perfil</p>
+    </ng-container>
+
+  </main>
+</div>

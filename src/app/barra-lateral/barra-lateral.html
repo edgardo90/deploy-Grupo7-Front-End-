@@ -1,0 +1,16 @@
+<aside>
+    <div class="saludo-usuario">
+    <p><strong>Bienvenido</strong></p>
+    <p>Sergio</p>
+  </div>
+
+  <nav>
+    <ul>
+      <li (click)="cambiarVista.emit('libros')">Todos mis libros</li>
+      <li (click)="cambiarVista.emit('colecciones')">Colecciones</li>
+      <li (click)="cambiarVista.emit('configuracion')">Configuración</li>
+    </ul>
+  </nav>
+
+  <button class="boton-cerrar-sesion">Cerrar Sesión</button>
+</aside>

@@ -1,0 +1,41 @@
+.diseño-usuario {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+.contenido-principal {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+  flex-direction: column; /* Esto alinea los hijos en columna */
+  align-items: center;     /* Centra horizontalmente */
+  /*justify-content: flex-start; /* Alinea arriba*/
+}
+
+.boton-agregar-libro {
+  /* align-self: flex-end; Lo empuja a la derecha dentro del contenedor */
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #3E5F79;
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 0px;
+  cursor: pointer;
+}
+
+.boton-agregar-libro:hover {
+  background-color: #3E5F77;
+}
+
+
+.mensaje-vacio {
+  margin-top: 100px;
+  margin-bottom: 100px; /* le da espacio hacia abajo */
+  text-align: center;
+  font-size: 1.2rem;
+  color: #444;
+}
