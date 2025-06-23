@@ -6,7 +6,7 @@ import { filter } from 'rxjs/operators';
 import { IUser } from '../interfaces/user'
 
 @Component({
-  selector: 'app-navbar',
+  selector: 'app-navbar', 
   imports: [CommonModule, RouterLink],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css'
