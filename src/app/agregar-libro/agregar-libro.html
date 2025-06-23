@@ -1,6 +1,6 @@
 <section class="agregar-libro-section">
    
-<form class="register-form">
+<form class="add-form" [formGroup]="addForm" (submit)="onSubmit()">
   <h2>Agregar Libro</h2>
 
   <div class="input-group">
@@ -44,12 +44,12 @@
 
   <div class="input-group">
     <label for="editorial">Editorial</label>
-    <input type="text" id="editorial" name="editorial" placeholder="Editorial del libro" required>
+    <input type="text" id="editorial" name="editorial" placeholder="Editorial del libro">
   </div>
 
   <div class="input-group">
     <label for="image">Imagen</label>
-    <input type="text" id="image" name="image" placeholder="URL de la imagen" required>
+    <input type="text" id="image" name="image" placeholder="URL de la imagen">
   </div>
 
   <button type="submit" class="add-button">Agregar Libro</button>
