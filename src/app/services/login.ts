@@ -53,7 +53,7 @@ export class LoginService {
   }
 
 
-  clearLocalStorage() {
+  logoutAndClear() {
     localStorage.clear()
   }
 

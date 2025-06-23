@@ -2,10 +2,15 @@
   <div class="logo">Nombre Web</div>
   <ul class="nav-links">
     <li><a href="#">Inicio</a></li>
-    <li [routerLink]="['/login']" style="cursor: pointer;">
-      <a> Entrar </a>
+    @if (!user._id) {
+    <li style="cursor: pointer">
+      <a [routerLink]="['/login']"> Entrar </a>
     </li>
+    } @if (user._id) {
+    <li><a [routerLink]="'/agregarLibro'">Agregar un libro</a></li>
+    } @if(user._id){
+    <li (click)="logout()" class="logout">Cerrar sesion</li>
+    }
     <li><a href="#">Acerca</a></li>
-    <li><a [routerLink]="'/agregarLibro'">Otro Link</a></li>
   </ul>
 </nav>
