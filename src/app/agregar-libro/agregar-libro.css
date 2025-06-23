@@ -1,0 +1,120 @@
+.agregar-libro-section {
+     position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:    
+    url('/assets/images/agregarfondo1.jpg') center/cover no-repeat;
+   z-index: 0;
+  padding: 2rem;
+}
+
+.agregar-libro-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.4); 
+  z-index: 1;
+  overflow: hidden; 
+}
+
+.agregar-libro-section > * {
+  position: relative;
+  z-index: 2; 
+}
+
+
+
+.register-form {
+     position: relative;
+  z-index: 2;
+   width: 100%;
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.register-form h2 {
+  text-align: center;
+  color: #335973;
+  margin-bottom: 25px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #444;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #6c63ff;
+}
+
+.add-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #335973;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #4f7a96;
+}
+
+.input-group select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #333;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: border 0.3s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23666" class="bi bi-caret-down-fill" viewBox="0 0 16 16"><path d="M7.247 11.14 2.451 5.658A.5.5 0 0 1 2.89 4.5h10.22a.5.5 0 0 1 .438.758l-4.796 5.482a.5.5 0 0 1-.758 0z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+}
+
+.input-group select:focus {
+  outline: none;
+  border-color: #6c63ff;
+}
+
