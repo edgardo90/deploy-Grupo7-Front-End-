@@ -3,30 +3,44 @@
 <form class="add-form" [formGroup]="addForm" (submit)="onSubmit()">
   <h2>Agregar Libro</h2>
 
+  <!--class="required" maneja el asterisco de campo obligatorio-->
+  
   <div class="input-group">
-    <label for="title">Título</label>
-    <input type="text" id="title" name="title" placeholder="El título del libro" required>
+    <label for="title" class="required">Título</label>
+    <input type="text" id="title" name="title" placeholder="El título del libro" formControlName="title" required>
+
+     @if (title.errors?.['required'] && (title.touched || title.dirty)) {
+    <span style="color: red">El título es obligatorio.</span>
+    } 
   </div>
 
   <div class="input-group">
-    <label for="author">Autor</label>
-    <input type="text" id="author" name="author" placeholder="Juan Pérez" required>
+    <label for="author" class="required">Autor</label>
+    <input type="text" id="author" name="author" placeholder="Juan Pérez" formControlName="author" required>
+     @if (author.errors?.['required'] && (author.touched || author.dirty)) {
+    <span style="color: red">El autor es obligatorio.</span>
+    } 
   </div>
 <div class="input-group">
-  <label for="category">Categoría</label>
-  <select id="category" name="category" required>
-    <option value="libro" disabled selected>Libro</option>
+  <label for="category" class="required">Categoría</label>
+  <select id="category" name="category" formControlName="category" required>
+    
+
+    <option value="libro" >Libro</option>
     
     <option value="comic">Cómic</option>
     <option value="manga">Manga</option>
 
   </select>
+   @if (category.errors?.['required'] && (category.touched || category.dirty)) {
+    <span style="color: red">Elegir una categoría es obligatorio.</span>
+    } 
 </div>
 
 <div class="input-group">
-  <label for="genre">Género</label>
-  <select id="genre" name="genre" required>
-    <option value="aventura" disabled selected>Aventura</option>
+  <label for="genre" class="required">Género</label> 
+  <select id="genre" name="genre" formControlName="genre" required>
+     <option value="aventura">Aventura</option>
     <option value="drama">Drama</option>
     <option value="historico">Histórico</option>
     <option value="romance">Romance</option>
@@ -34,22 +48,25 @@
     
     
   </select>
+   @if (genre.errors?.['required'] && (genre.touched || genre.dirty)) {
+    <span style="color: red">Elegir un género es obligatorio.</span>
+    } 
 </div>
 
 
   <div class="input-group">
     <label for="description">Descripción</label>
-    <input type="text" id="description" name="description" placeholder="Descripción del libro">
+    <input type="text" id="description" name="description" placeholder="Descripción del libro" formControlName="description">
   </div>
 
   <div class="input-group">
     <label for="editorial">Editorial</label>
-    <input type="text" id="editorial" name="editorial" placeholder="Editorial del libro">
+    <input type="text" id="editorial" name="editorial" placeholder="Editorial del libro" formControlName="editorial">
   </div>
 
   <div class="input-group">
     <label for="image">Imagen</label>
-    <input type="text" id="image" name="image" placeholder="URL de la imagen">
+    <input type="text" id="image" name="image" placeholder="URL de la imagen" formControlName="image">
   </div>
 
   <button type="submit" class="add-button">Agregar Libro</button>
