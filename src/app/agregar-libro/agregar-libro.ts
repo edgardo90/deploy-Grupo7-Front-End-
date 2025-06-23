@@ -11,11 +11,6 @@ import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angula
 export class AgregarLibro {
 
 
-// Este FormGroup representa todo el formulario de login
-  loginForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(6)]) // Contraseña de al menos 6 caracteres
-  });
 
 
 
