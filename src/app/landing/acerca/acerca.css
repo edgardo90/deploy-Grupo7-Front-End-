@@ -4,22 +4,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position:relative;
+  position: relative;
   text-align: center;
-  
+  padding: 2rem;
 }
-
-.acerca h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.acerca p {
-  font-size: 1.1rem;
- 
-  margin: 0 auto;
-}
-
 
 .acerca::before {
   content: "";
@@ -28,24 +16,32 @@
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100vw;
-
   background: linear-gradient(
-      rgba(192, 120, 240, 0.6)
-    ),
-    url("/assets/images/cover.jpg") no-repeat center/cover;
-    z-index: 1;
-
-
+    rgba(30, 123, 245, 0.6)
+  ),
+  url("/assets/images/cover.jpg") no-repeat center/cover;
+  z-index: 1;
 }
 
-.acerca > * {
+.acerca-content {
   position: relative;
   z-index: 2;
+  max-width: 800px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  padding: 2rem;
+  border-radius: 12px;
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
+.acerca-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
 
-
-
-
-
+.acerca-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
