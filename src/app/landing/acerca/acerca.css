@@ -17,9 +17,9 @@
   right: 0;
   bottom: 0;
   background: linear-gradient(
-      rgba(30, 123, 245, 0.6)
-    ),
-    url("/assets/images/cover.jpg") no-repeat center/cover;
+    rgba(30, 123, 245, 0.6)
+  ),
+  url("/assets/images/cover.jpg") no-repeat center/cover;
   z-index: 1;
 }
 

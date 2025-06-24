@@ -1,29 +1,12 @@
 .footer {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
   background-color: #3E5F79;
-  color: white;
-  padding: 2rem 1rem;
+  color: rgb(255, 255, 255);
   text-align: center;
-}
-
-.footer-content {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.footer-brand {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
-  margin-bottom: 0.5rem;
-}
-
-.footer-slogan {
-  font-style: italic;
-  margin-bottom: 1rem;
-  opacity: 0.9;
-}
-
-.copyright {
   font-size: 0.9rem;
-  opacity: 0.7;
+  z-index: 2;
+   
 }
