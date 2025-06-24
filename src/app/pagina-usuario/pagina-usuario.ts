@@ -6,6 +6,7 @@ import { NgIf } from '@angular/common';
 import { IBook } from '../interfaces/book';
 import { UserService } from '../services/user-service';
 import { LoginService } from '../services/login';
+import { BookService } from '../services/book-servie';
 
 @Component({
   selector: 'app-pagina-usuario',
@@ -19,7 +20,7 @@ export class PaginaUsuario implements OnInit {
   vistaActual = 'libros';
   libros: IBook[] = []; // <- por ahora vacía, luego se llenará con datos reales
 
-  constructor(private router: Router, private userService: UserService ,private loginService: LoginService ) { }
+  constructor(private router: Router, private userService: UserService ,private loginService: LoginService,private bookService:BookService ) { }
 
   //esto ya funciona pero tiren magia y si quieren comenten.
   ngOnInit(): void {
@@ -51,5 +52,23 @@ export class PaginaUsuario implements OnInit {
   irAAgregarLibro() {
     this.router.navigate(['/agregarLibro'])
   }
+  eliminarLibro(libroId: string): void {
+  const confirmar = confirm("¿Estás seguro de que querés eliminar este libro?");
+  if (!confirmar) return;
+
+  this.bookService.deleteBook(libroId)
+    .subscribe({
+      next: () => {
+        alert("Libro eliminado con éxito");
+        this.libros = this.libros.filter(libro => libro._id !== libroId);
+      },
+      error: (err: any) => {
+        console.error(err);
+        alert("Hubo un error al eliminar el libro");
+      }
+    });
+}
+
+
 }
 

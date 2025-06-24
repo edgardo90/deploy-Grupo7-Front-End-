@@ -32,5 +32,8 @@ export class BookService {
     };
     return this.http.post<IResponsePostBook>(urlPostBook , jsonData);
   }
+deleteBook(bookId: string): Observable<IResponseApi> {
+return this.http.delete<IResponseApi>(`${this.apiUrl}/books/find/${bookId}`);
+}
 
 }
