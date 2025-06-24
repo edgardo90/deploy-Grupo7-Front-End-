@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';;
 import { BarraLateral } from '../barra-lateral/barra-lateral';
 import { NgIf } from '@angular/common';
 import { IBook } from '../interfaces/book';
@@ -9,7 +10,7 @@ import { LoginService } from '../services/login';
 @Component({
   selector: 'app-pagina-usuario',
   standalone: true,
-  imports: [BarraLateral, NgIf],
+  imports: [BarraLateral, NgIf, CommonModule],
   templateUrl: './pagina-usuario.html',
   styleUrl: './pagina-usuario.css'
 })

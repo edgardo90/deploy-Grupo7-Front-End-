@@ -22,7 +22,7 @@ export class AgregarLibro {
     genre: new FormControl('', [Validators.required]),
     description: new FormControl(''),
     editorial: new FormControl(''),
-    image: new FormControl('')
+    imageURL: new FormControl('')
   });
 
   constructor(private bookService: BookService, private router: Router , private loginService: LoginService) { }
@@ -52,8 +52,8 @@ export class AgregarLibro {
     return this.addForm.get('editorial') as FormControl;
   }
 
-  get image() {
-    return this.addForm.get('image') as FormControl;
+  get imageURL() {
+    return this.addForm.get('imageURL') as FormControl;
   }
 
   onSubmit(): void {
@@ -70,7 +70,7 @@ export class AgregarLibro {
         genre: this.addForm.value.genre as string,
         description: this.addForm.value.description as string,
         editorial: this.addForm.value.editorial as string,
-        image: this.addForm.value.image as string,
+        imageURL: this.addForm.value.imageURL as string,
       };
       this.bookService.postBook(
         jsonData.title,
@@ -79,7 +79,7 @@ export class AgregarLibro {
         jsonData.genre,
         jsonData.description,
         jsonData.editorial,
-        jsonData.image,
+        jsonData.imageURL,
         this.loginService.getUserId() as string
       ).subscribe(({
         next: (response) => {
