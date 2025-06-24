@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -22,8 +23,9 @@ addForm = new FormGroup({
   image: new FormControl('')
 });
 
-//ESTO FALTA 
-//onstructor(private agregarLibroService: agregarLibroService, private router: Router) { }
+
+
+
 
 get title() {
   return this.addForm.get('title') as FormControl;
@@ -59,22 +61,30 @@ onSubmit(): void {
     return alert("Error: por favor completá todos los campos obligatorios");
   }
 
-  this.loading = true;
 
-  const bookData = {
-    title: this.title.value,
-    author: this.author.value,
-    category: this.category.value,
-    genre: this.genre.value,
-    description: this.description.value,
-    editorial: this.editorial.value,
-    image: this.image.value
-  };
+   if (this.addForm.valid) {
+      this.loading = true
+      const jsonData = {
+        title: this.addForm.value.title as string,
+        author: this.addForm.value.author as string,
+        category: this.addForm.value.category as string,
+        genre: this.addForm.value.genre as string,
+        description: this.addForm.value.description as string,
+        editorial: this.addForm.value.editorial as string,
+        image: this.addForm.value.image as string,
+        };
 
- // FALTA COMPLETAR ?
+   
+      
+
+}
+ 
+}
 }
 
 
 
 
-}
+     
+
+
