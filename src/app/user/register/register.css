@@ -1,0 +1,121 @@
+/* Aplica los estilos directamente al selector del componente */
+/* :host se refiere al elemento */
+:host { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Necesario para el pseudo-elemento */
+  /* position: relative;  */
+  background: linear-gradient(rgba(22, 226, 100, 0.5), rgba(226, 223, 22, 0.5)),
+    url("/assets/images/cover2.jpg") no-repeat center center/cover;
+  background-attachment: fixed;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 80vh; /* Ocupa el alto completo de la ventana para centrarse */
+  background-color: #e6f7ff; /* Un azul muy claro para el fondo (distinto al login) */
+  font-family: Arial, sans-serif; /* Fuente básica */
+
+  /* Estilos para el contenedor del formulario */
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px; /* Bordes un poco más redondeados */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Sombra un poco más pronunciada */
+  width: 100%;
+  max-width: 450px; /* Un poco más ancho que el login */
+  text-align: center;
+
+  /* Centrado horizontal */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7%;
+  margin-bottom: 5%;
+}
+
+.register-form h2 {
+  margin-bottom: 35px; /* Un poco más de margen */
+  color: #2c3e50; /* Un azul oscuro distinto al login */
+  font-size: 30px; /* Un poco más grande */
+  width: 100%;
+}
+
+/* Grupo de entrada (label + input) */
+.input-group {
+  margin-bottom: 25px; /* Un poco más de espacio entre campos */
+  width: 100%;
+  max-width: 350px; /* Ancho máximo para los campos */
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #34495e; /* Color de texto para labels */
+  font-weight: bold;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="password"] {
+  width: 100%;
+  padding: 14px 12px; /* Un poco más de padding */
+  border: 1px solid #cceeff; /* Borde más claro, tirando a azul */
+  border-radius: 6px; /* Bordes un poco más redondeados */
+  font-size: 17px; /* Fuente un poco más grande */
+  box-sizing: border-box;
+  background-color: #f9fcff; /* Fondo del input muy claro */
+}
+
+.input-group input[type="text"]:focus,
+.input-group input[type="email"]:focus,
+.input-group input[type="password"]:focus {
+  border-color: #1abc9c; /* Color de foco verde-azulado (distinto al azul del login) */
+  outline: none;
+  box-shadow: 0 0 7px rgba(26, 188, 156, 0.3); /* Sombra de foco verde-azulado */
+}
+
+/* Estilos del botón de submit */
+.register-button {
+  background-color: #1abc9c; /* Color de botón verde-azulado (distinto al azul del login) */
+  color: white;
+  padding: 16px 25px; /* Un poco más grande */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 19px; /* Fuente un poco más grande */
+  font-weight: bold;
+  width: 100%;
+  max-width: 350px; /* Ancho máximo del botón */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 15px; /* Margen superior adicional */
+}
+
+.register-button:hover {
+  background-color: #16a085; /* Tono más oscuro al pasar el mouse */
+  transform: translateY(-2px); /* Pequeño efecto de levantamiento */
+}
+
+/* Enlace a la página de login */
+.login-link {
+  margin-top: 30px; /* Más margen superior */
+  font-size: 15px;
+  color: #7f8c8d; /* Color de texto gris */
+  width: 100%;
+}
+
+.login-link a {
+  color: #3498db; /* Color de enlace azul medio (distinto al login) */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+  color: #2980b9;
+}

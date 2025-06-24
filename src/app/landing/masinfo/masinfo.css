@@ -1,0 +1,45 @@
+.masinfo {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position:relative;
+  text-align: center;
+  
+}
+
+.masinfo h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.masinfo p {
+  font-size: 1.1rem;
+ 
+  margin: 0 auto;
+}
+
+
+.masinfo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+
+  background: linear-gradient(
+      rgba(226, 121, 22, 0.6)
+    ),
+    url("/assets/images/cover3.jpg") no-repeat center/cover;
+    z-index: 1;
+
+
+}
+
+.masinfo > * {
+  position: relative;
+  z-index: 2;
+}

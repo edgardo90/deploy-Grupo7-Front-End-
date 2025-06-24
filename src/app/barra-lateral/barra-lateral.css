@@ -1,0 +1,99 @@
+/* .barra-lateral {
+  width: 150px;
+  background-color: #f2f2f2;
+  padding: 1rem;
+  height: 100%;
+} 
+
+.barra-lateral ul {
+  list-style: none;
+  padding: 0;
+}
+
+.barra-lateral li {
+  cursor: pointer;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20px;
+  background-color: #f2f2f2;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  justify-content: space-between;
+}
+
+aside h2 {
+  margin-bottom: 10px;
+}
+
+aside nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+aside nav li {
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+ .boton-cerrar-sesion {
+  margin-top: 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+} 
+ */
+
+ aside {
+  width: 250px;
+  background-color: #f1f1f1;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* height: 100vh; */
+  height: calc(100vh - 60px); /* Ajusta si el navbar es fijo y mide 60px */
+  margin-top: 60px; /* Desplaza el aside debajo del navbar fijo */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+aside nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+aside nav li {
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.saludo-usuario {
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+.boton-cerrar-sesion {
+  padding: 10px;
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.boton-cerrar-sesion:hover {
+  background-color: #c55450;
+}
+

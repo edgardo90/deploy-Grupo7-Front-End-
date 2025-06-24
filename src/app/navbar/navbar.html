@@ -1,0 +1,23 @@
+<nav class="navbar">
+  <div class="logo">Nombre Web</div>
+  <ul class="nav-links">
+    @if(!user._id){
+    <li><a [routerLink]="'/'">Inicio</a></li>
+    }
+    @if (user._id) {
+      <li>
+        <a [routerLink]="'/usuario'">Mis Libros</a>
+      </li>
+    }
+    @if (!user._id) {
+    <li style="cursor: pointer">
+      <a [routerLink]="['/login']"> Entrar </a>
+    </li>
+    } @if (user._id) {
+    <li><a [routerLink]="'/agregarLibro'">Agregar un libro</a></li>
+    } @if(user._id){
+    <li (click)="logout()" class="logout">Cerrar sesion</li>
+    }
+    <li><a href="#">Acerca</a></li>
+  </ul>
+</nav>
