@@ -5,8 +5,10 @@ import { IResponseApi } from '../interfaces/responseApi'
 import { IUser } from '../interfaces/user'
 
 interface IResponsCreateUser extends IResponseApi {
-  status: string,
-  message: string,
+  data?: IUser
+}
+
+interface IResponseUserById extends IResponseApi {
   data?: IUser
 }
 
@@ -20,9 +22,14 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   postCreateUser(name: string, email: string, password: string): Observable<IResponsCreateUser> {
-    const urlLogin = `${this.apiUrl}/users/create`;
+    const urlUser = `${this.apiUrl}/users/create`;
     const jsonData = { name, email, password };
-    return this.http.post<IResponsCreateUser>(urlLogin, jsonData);
+    return this.http.post<IResponsCreateUser>(urlUser, jsonData);
+  }
+
+  getUserByid(userId: string): Observable<IResponseUserById> {
+    const urlUserByid = `${this.apiUrl}/users/find/${userId}`;
+    return this.http.get<IResponseUserById>(urlUserByid)
   }
 
 }
