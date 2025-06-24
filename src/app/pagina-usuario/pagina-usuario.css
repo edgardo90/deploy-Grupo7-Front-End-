@@ -19,16 +19,16 @@
   /* align-self: flex-end; Lo empuja a la derecha dentro del contenedor */
   margin-bottom: 20px;
   padding: 10px 20px;
-  background-color: #3E5F79;
+  background-color: #4e7492;
   color: white;
   border: none;
   font-weight: bold;
-  border-radius: 0px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
 .boton-agregar-libro:hover {
-  background-color: #3E5F77;
+  background-color: #4b8dbf;
 }
 
 
