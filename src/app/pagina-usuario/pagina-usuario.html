@@ -1,55 +1,55 @@
 <section class="diseño-usuario">
   <!-- <app-barra-lateral (cambiarVista)="mostrarVista($event)"></app-barra-lateral> -->
   <app-barra-lateral class="barra-lateral"></app-barra-lateral>
-  
+
   <main class="contenido-principal">
 
     @if (vistaActual === 'libros') {
-  @if (libros.length === 0) {
+    @if (libros.length === 0) {
     <div class="mensaje-vacio">
       <p>📚 Aún no tenés libros agregados. ¡Comenzá agregando uno!</p>
     </div>
-  } @else {
+    } @else {
     <div>
-     
+
       <div class="contenedor-tarjetas">
-@for (libro of libros; track libro._id) {
-            <div class="tarjeta-libro">
-              <img [src]="libro.imageURL || '/assets/images/default.png'" alt="Imagen del libro" class="coverLibro">
+        @for (libro of libros; track libro._id) {
+        <div class="tarjeta-libro">
+          <img [src]="libro.imageURL || '/assets/images/default.png'" alt="Imagen del libro" class="coverLibro">
 
-              <h3>{{ libro.title }}</h3>
-              <p><strong>Autor:</strong> {{ libro.author }}</p>
-              <p><strong>Categoría:</strong> {{ libro.category }}</p>
-              <p><strong>Género:</strong> {{ libro.genre }}</p>
-              <p><strong>Descripción:</strong> {{ libro.description }}</p>
-              <p><strong>Editorial:</strong> {{ libro.editorial }}</p>
+          <h3>{{ libro.title }}</h3>
+          <p><strong>Autor:</strong> {{ libro.author }}</p>
+          <p><strong>Categoría:</strong> {{ libro.category }}</p>
+          <p><strong>Género:</strong> {{ libro.genre }}</p>
+          <p><strong>Descripción:</strong> {{ libro.description }}</p>
+          <p><strong>Editorial:</strong> {{ libro.editorial }}</p>
 
-              <!-- botones para el editar y borrar FALTA LA LOGICA -->
-              <div class="botones-libro">
-  <button class="btn-editar" >Editar</button>
-  <button class="btn-eliminar" (click)="eliminarLibro(libro._id)">Eliminar</button>
+          <!-- botones para el editar y borrar FALTA LA LOGICA -->
+          <div class="botones-libro">
+            <button class="btn-editar" type="button" [routerLink]="['book' , libro._id]">Editar</button>
+            <button class="btn-eliminar" (click)="eliminarLibro(libro._id)">Eliminar</button>
 
-</div>
+          </div>
 
-            </div>
-          }
+        </div>
+        }
 
-          </div> <!-- fin del contenedor de las tarjetas -->
+      </div> <!-- fin del contenedor de las tarjetas -->
 
     </div>
-  }
-}
+    }
+    }
 
 
     <button class="boton-agregar-libro" (click)="irAAgregarLibro()">Agregar libro</button>
 
-  @if (vistaActual === 'colecciones') {
-  <p>Acá se mostrarán las colecciones del usuario</p>
-}
+    @if (vistaActual === 'colecciones') {
+    <p>Acá se mostrarán las colecciones del usuario</p>
+    }
 
-@if (vistaActual === 'configuracion') {
-  <p>Configuración del perfil</p>
-}
+    @if (vistaActual === 'configuracion') {
+    <p>Configuración del perfil</p>
+    }
 
 
   </main>

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { IResponseApi } from '../interfaces/responseApi';
 import { IBook } from '../interfaces/book'
 
-interface IResponsePostBook extends IResponseApi {
+interface IResponseBook extends IResponseApi {
   data?: IBook
 }
 
@@ -18,7 +18,7 @@ export class BookService {
 
   private apiUrl = 'http://localhost:3000';
 
-  postBook(title:string , author:string , category:string , genre:string , description:string , editorial:string , imageURL:string , userId:string ):Observable<IResponsePostBook>{
+  postBook(title: string, author: string, category: string, genre: string, description: string, editorial: string, imageURL: string, userId: string): Observable<IResponseBook> {
     const urlPostBook = `${this.apiUrl}/books/create`;
     const jsonData = {
       title,
@@ -30,10 +30,30 @@ export class BookService {
       imageURL,
       userId
     };
-    return this.http.post<IResponsePostBook>(urlPostBook , jsonData);
+    return this.http.post<IResponseBook>(urlPostBook, jsonData);
   }
-deleteBook(bookId: string): Observable<IResponseApi> {
-return this.http.delete<IResponseApi>(`${this.apiUrl}/books/find/${bookId}`);
-}
+
+  deleteBook(bookId: string): Observable<IResponseApi> {
+    return this.http.delete<IResponseApi>(`${this.apiUrl}/books/find/${bookId}`);
+  }
+
+  getBookByid(bookId: string): Observable<IResponseBook> {
+    return this.http.get<IResponseApi>(`${this.apiUrl}/books/find/${bookId}`);
+  }
+
+  patchBookId(bookId: string , title: string, author: string, category: string, genre: string, description: string, editorial: string, imageURL: string, ): Observable<IResponseBook> {
+    const urlPostBook = `${this.apiUrl}/books/find/${bookId}`;
+       const jsonData = {
+      title,
+      author,
+      category,
+      genre,
+      description,
+      editorial,
+      imageURL,
+      bookId
+    };
+    return this.http.patch<IResponseBook>(urlPostBook, jsonData);
+  }
 
 }
