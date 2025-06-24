@@ -117,4 +117,9 @@
   outline: none;
   border-color: #6c63ff;
 }
+/* Asterisco rojo para la etiqueta requerida */ 
+label.required::after {
+  content: ' *';
+  color: red;
+}
 
