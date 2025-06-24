@@ -139,6 +139,11 @@ export class AgregarLibro implements OnInit {
         },
       }))
     }
+
+  }
+
+  volveraLibros() {
+    this.router.navigate(['/usuario'])
   }
 
   onEdit() {
@@ -186,7 +191,6 @@ export class AgregarLibro implements OnInit {
       }))
     }
   }
-
 }
 
 
