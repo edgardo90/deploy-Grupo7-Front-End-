@@ -5,7 +5,8 @@ export interface IBook {
     category: string;
     genre: string;
     description?: string;
-    imageURL?: string
+    editorial?: string;
+    imageURL?: string;
     createdAt: string;
     updatedAt: string;
 }

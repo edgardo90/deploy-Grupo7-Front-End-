@@ -45,7 +45,7 @@
         <option value="Historico">Histórico</option>
         <option value="Romance">Romance</option>
         <option value="Terror">Terror</option>
-        <option value="Comedia">Terror</option>
+        <option value="Comedia">Comedia</option>
 
       </select>
       @if (genre.errors?.['required'] && (genre.touched || genre.dirty)) {
@@ -66,8 +66,8 @@
     </div>
 
     <div class="input-group">
-      <label for="image">Imagen</label>
-      <input type="text" id="image" name="image" placeholder="URL de la imagen" formControlName="image">
+      <label for="imageURL">Imagen</label>
+      <input type="text" id="imageURL" name="imageURL" placeholder="URL de la imagen" formControlName="imageURL">
     </div>
 
     <button type="submit" class="add-button">Agregar Libro</button>

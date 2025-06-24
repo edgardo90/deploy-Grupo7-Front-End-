@@ -18,7 +18,7 @@ export class BookService {
 
   private apiUrl = 'http://localhost:3000';
 
-  postBook(title:string , author:string , category:string , genre:string , description:string , editorial:string , imageUrl:string , userId:string ):Observable<IResponsePostBook>{
+  postBook(title:string , author:string , category:string , genre:string , description:string , editorial:string , imageURL:string , userId:string ):Observable<IResponsePostBook>{
     const urlPostBook = `${this.apiUrl}/books/create`;
     const jsonData = {
       title,
@@ -27,7 +27,7 @@ export class BookService {
       genre,
       description,
       editorial,
-      imageUrl,
+      imageURL,
       userId
     };
     return this.http.post<IResponsePostBook>(urlPostBook , jsonData);
