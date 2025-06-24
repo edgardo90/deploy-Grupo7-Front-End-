@@ -1,7 +1,12 @@
 <section class="agregar-libro-section">
 
-  <form class="add-form" [formGroup]="addForm" (submit)="onSubmit()">
+  <form class="add-form" [formGroup]="addForm" (submit)="!bookId ? onSubmit(): onEdit()">
+    @if(bookId){
+    <h2>Editar Libro</h2>
+    }
+    @if(!bookId){
     <h2>Agregar Libro</h2>
+    }
 
     <!--class="required" maneja el asterisco de campo obligatorio-->
 
@@ -69,10 +74,11 @@
       <label for="imageURL">Imagen</label>
       <input type="text" id="imageURL" name="imageURL" placeholder="URL de la imagen" formControlName="imageURL">
     </div>
-
-    <button type="submit" class="add-button">Agregar Libro</button>
-
+ 
+    <button type="submit" class="add-button">{{!bookId ? "Agregar Libro": 'Confirmar Edicion'}}</button>
+    <br>
     <button type="button" class="add-button" (click)="volveraLibros()">Volver</button>
+
   </form>
 
 </section>

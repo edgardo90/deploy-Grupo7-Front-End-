@@ -21,5 +21,10 @@ export const routes: Routes = [
           path: 'agregarLibro',
           component: AgregarLibro,
           canActivate: [authGuard]
+     },
+     {
+          path: 'usuario/book/:id',
+          component: AgregarLibro,
+          canActivate: [authGuard]
      }
 ];
