@@ -11,6 +11,7 @@ import { UserService } from '../services/user-service';
   templateUrl: './mis-colecciones.html',
   styleUrl: './mis-colecciones.css'
 }) 
+
 export class MisColecciones implements OnInit {
 
 colecciones: ICollection[] = [];
