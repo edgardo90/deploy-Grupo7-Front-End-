@@ -1,0 +1,44 @@
+<section class="diseño-usuario">
+    <app-barra-lateral></app-barra-lateral>
+ <main class="contenido-principal">
+
+  
+@if (vistaActual === 'colecciones') {
+    @if (colecciones.length === 0) {
+    <div class="mensaje-vacio">
+      <p>📚 Aún no tenés colecciones agregados. ¡Comenzá agregando uno!</p>
+    </div>
+    } @else {
+    <div>
+
+      <div class="contenedor-tarjetas">
+        @for (coleccion of colecciones; track coleccion._id) {
+        <div class="tarjeta-coleccion">
+          
+
+          <h3>{{ coleccion.name }}</h3>
+         
+          <p><strong>Type:</strong> {{ coleccion.type }}</p>b
+         
+         
+
+          <!-- botones para el editar y borrar FALTA LA LOGICA -->
+         
+
+        </div>
+        }
+
+      </div> <!-- fin del contenedor de las tarjetas -->
+
+</div>
+    }
+    }
+    
+
+     <button type="button" class="boton-agregar-coleccion" (click)=" irCrearColeccion()" >Crear Colección</button>
+   
+
+
+  </main>
+
+  </section>

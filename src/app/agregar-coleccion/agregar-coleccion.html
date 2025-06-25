@@ -1,0 +1,31 @@
+<section class="agregar-libro-section">
+
+  <form class="add-form" [formGroup]="addForm" (submit)= onSubmit()>
+  
+  <h2>Creá una coleccion! </h2>
+    <!--class="required" maneja el asterisco de campo obligatorio-->
+
+    <div class="input-group">
+      <label for="name" class="required">Nombre de la colección</label>
+      <input type="text" id="name" name="name" placeholder="El título del libro" formControlName="name" required>
+<!--
+      @if (name.errors?.['required'] && (name.touched || name.dirty)) {
+      <span style="color: red">El nombre es obligatorio.</span>
+      }-->
+    </div>
+
+    <div class="input-group">
+      <label for="type" class="required">Descripción</label>
+      <input type="text" id="type" name="type" placeholder="Juan Pérez" formControlName="type" required>
+    <!--  @if (type.errors?.['required'] && (type.touched || type.dirty)) {
+      <span style="color: red">Una descripción es obligatorio.</span> -->
+      
+    </div>
+
+
+    
+
+    <button type="submit" class="add-button">Crear Colección</button>
+  </form>
+
+</section>
