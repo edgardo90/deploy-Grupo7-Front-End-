@@ -1,62 +1,7 @@
-/* .barra-lateral {
-  width: 150px;
-  background-color: #f2f2f2;
-  padding: 1rem;
-  height: 100%;
-} 
-
-.barra-lateral ul {
-  list-style: none;
-  padding: 0;
-}
-
-.barra-lateral li {
-  cursor: pointer;
-  margin-bottom: 1rem;
-  font-weight: bold;
-}
-
-aside {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  padding: 20px;
-  background-color: #f2f2f2;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-  justify-content: space-between;
-}
-
-aside h2 {
-  margin-bottom: 10px;
-}
-
-aside nav ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 20px;
-}
-
-aside nav li {
-  margin-bottom: 10px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
- .boton-cerrar-sesion {
-  margin-top: 20px;
-  background-color: red;
-  color: white;
-  border: none;
-  padding: 10px;
-  width: 100%;
-  cursor: pointer;
-} 
- */
-
  aside {
   width: 250px;
   background-color: #f1f1f1;
-  padding: 30px 20px;
+  padding: 30px 50px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -70,18 +15,26 @@ aside nav li {
 aside nav ul {
   list-style: none;
   padding: 0;
-  margin: 20px 0;
+  /* margin: 20px 0; */
 }
 
 aside nav li {
-  margin-bottom: 10px;
+  margin-bottom: 40px;
+  padding: 6px 10px;
+}
+
+aside nav li:hover {
+  margin-bottom: 40px;
+  background-color: #4b8dbf;
+  border-radius: 5px;
+  padding: 6px 10px;
   cursor: pointer;
-  font-weight: bold;
+  transition: background-color 0.3s;
 }
 
 .saludo-usuario {
-  margin-bottom: 30px;
-  font-size: 1.1rem;
+  margin-bottom: 40px;
+  font-size: 1.5rem;
   color: #333;
   line-height: 1.4;
 }
@@ -91,9 +44,10 @@ aside nav li {
   background-color: #d9534f;
   color: white;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
 .boton-cerrar-sesion:hover {
-  background-color: #c55450;
+  background-color: red;
 }
 
