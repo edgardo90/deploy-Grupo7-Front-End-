@@ -12,7 +12,7 @@ interface IResponseCollection extends IResponseApi {
   providedIn: 'root'
 })
 export class CollectionService {
-  private apiUrl = 'http://localhost:3000/collections';
+  private apiUrl = 'https://deploy-grupo7-front-end.vercel.app/';
 
   constructor(private http: HttpClient) {}
 
