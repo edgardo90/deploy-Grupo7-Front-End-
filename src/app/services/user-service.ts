@@ -17,7 +17,7 @@ interface IResponseUserById extends IResponseApi {
 })
 export class UserService {
 
-  private apiUrl = 'http://localhost:3000';
+  private apiUrl = 'https://deploy-grupo7-front-end.vercel.app/';
 
   constructor(private http: HttpClient) { }
 
