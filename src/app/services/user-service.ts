@@ -17,7 +17,7 @@ interface IResponseUserById extends IResponseApi {
 })
 export class UserService {
 
-  private apiUrl = 'https://grupo7-back-end-production.up.railway.app/';
+  private apiUrl = 'https://grupo7-back-end-production.up.railway.app';
 
   constructor(private http: HttpClient) { }
 
