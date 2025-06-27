@@ -1,0 +1,140 @@
+.diseño-usuario {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden
+}
+
+.contenido-principal {
+  flex: 1;
+  padding: 2rem;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  overflow-y: auto;
+  height: 100vh
+}
+
+/* Botón flotante */
+.boton-agregar-coleccion { 
+  position: fixed;
+  top: 90px;
+  right: 40px;
+  z-index: 1000;
+  padding: 12px 24px;
+  background-color: #3E5F79;
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: background-color 0.3s;
+}
+
+.boton-agregar-coleccion:hover {
+  background-color: #9dc9ef;
+  color: #3E5F79;
+   transform: scale(1.07);
+}
+
+.mensaje-vacio {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #444;
+}
+
+
+.contenedor-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 1rem 2rem;
+}
+
+
+
+.tarjeta-coleccion {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 230px;             
+  height: auto;
+  transition: transform 0.2s ease-in-out;
+  padding: 1rem;
+  text-align: left;
+}
+
+
+.tarjeta-coleccion:hover {
+  transform: scale(1.02);
+}
+
+.covercoleccion {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.tarjeta-coleccion h3 {
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem;
+  color: #2c3e50;
+}
+
+.tarjeta-coleccion p {
+  font-size: 0.95rem;
+  margin: 0.2rem 0;
+  color: #444;
+}
+
+
+.botones-coleccion {
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.btn-editar,
+.btn-eliminar {
+  flex: 1;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+
+.btn-editar {
+  background-color: #3E5F79;
+  color: white;
+}
+
+.btn-editar:hover {
+  background-color: #2e4b61;
+  transform: scale(1.07);
+}
+
+.btn-eliminar {
+  background-color: #d9534f;
+  color: white;
+}
+
+.btn-eliminar:hover {
+  background-color: #ff0800;
+  transform: scale(1.07);
+}
