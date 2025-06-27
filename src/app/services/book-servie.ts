@@ -16,7 +16,7 @@ export class BookService {
 
   constructor(private http: HttpClient) { }
 
-  private apiUrl = 'http://localhost:3000';
+  private apiUrl = 'https://deploy-grupo7-front-end.vercel.app/';
 
   postBook(title: string, author: string, category: string, genre: string, description: string, editorial: string, imageURL: string, userId: string): Observable<IResponseBook> {
     const urlPostBook = `${this.apiUrl}/books/create`;
