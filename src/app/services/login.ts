@@ -15,7 +15,7 @@ interface IResponseLogin extends IResponseApi {
 })
 export class LoginService {
 
-  private apiUrl = 'http://localhost:3000';
+  private apiUrl = 'https://deploy-grupo7-front-end.vercel.app/';
   private USER_EMAIL = 'userEmail';
   private USER_NAME = 'userName';
   private USER_ID = 'userId';
